@@ -1,4 +1,8 @@
 
-#ipbuttons-toolbar {
-    list-style-image: url("chrome://imagehandler/skin/virus.png");
+#ihbuttons-toolbar {
+    list-style-image: url("chrome://imagehandler/skin/ihicon.png");
 }
+
+/*  skin/toolbar-button.css  */
+
+/*  image-pick-buttons css  */

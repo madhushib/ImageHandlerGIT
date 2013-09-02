@@ -8,7 +8,7 @@
     <em:description>choose and save images</em:description>
     <em:version>1.0</em:version>
     <em:type>2</em:type> <!-- 2 : Extensions -->
-    <em:iconURL>chrome://imagehandler/skin/virus.png</em:iconURL>
+    <em:iconURL>chrome://imagehandler/skin/ihicon.png</em:iconURL>
     <em:creator>Madhushi Bandara</em:creator>
     <em:unpack>true</em:unpack>
 
