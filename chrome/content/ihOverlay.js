@@ -47,7 +47,7 @@ ImageHandler.pickImages=function(tab){
 	var browser = gBrowser.getBrowserForTab(tab);
 	//alert('got tab');
 	var contentWindow = browser.contentWindow;
-    alert('buuu got content window');
+    alert('got content window');
 	
 	var documentList = ImageHandler.getDocumentList(contentWindow);
         alert('got doc list');
@@ -85,5 +85,4 @@ ImageHandler.getDocumentList = function(frame){	//take all the documents of all 
 
  
  
-
 

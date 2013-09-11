@@ -6,11 +6,12 @@
     
     <toolbarpalette id="BrowserToolbarPalette">
         <toolbarbutton id="ihbuttons-toolbar" class="toolbarbutton-1 ih-buttons" type="menu-button"
-            label="magelabel" tooltiptext="magetooltip" oncommand="ImageHandler.drawSelectUI(event)">
+            label="ImageHandler" tooltiptext="ImageHandlerOptions" oncommand="ImageHandler.drawSelectUI(event)">
             
         </toolbarbutton>
     </toolbarpalette>
     
+   
     <?Insert shortcut on rightclick?>
     <?insert shortcut on menu bar?>
     

@@ -8,11 +8,12 @@
 		
 	<script type="application/x-javascript" src="chrome://imagehandler/content/ihOverlay.js" />
 	<script type="application/x-javascript" src="chrome://imagehandler/content/loadImages.js" />
+	<script type="application/x-javascript" src="chrome://imagehandler/content/LoadWindow.js" />
 	
-	
+		
 	
 	 <popupset>
-        <menupopup id="context-menu" onpopupshowing="ImagePickerChrome.Controller.handleOpenContextMenu();">
+        <menupopup id="context-menu" onpopupshowing="ImageHandler.load()">
        </menupopup>
     </popupset>
 	
@@ -24,5 +25,6 @@
      	
 
     </vbox>
+    
     
 </window>
