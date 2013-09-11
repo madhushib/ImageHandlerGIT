@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://imagepicker/skin/ip.css" type="text/css"?>
+<?xml-stylesheet href="chrome://imagepicker/skin/ih.css" type="text/css"?>
 
 <overlay id="ihOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script type="application/x-javascript" src="chrome://imagehandler/content/ihOverlay.js" />
@@ -10,4 +10,8 @@
             
         </toolbarbutton>
     </toolbarpalette>
+    
+    <?Insert shortcut on rightclick?>
+    <?insert shortcut on menu bar?>
+    
 </overlay>

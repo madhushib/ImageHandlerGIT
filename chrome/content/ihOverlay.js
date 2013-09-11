@@ -1,29 +1,49 @@
-
+//Components.utils.import("resource://ImageHandler/loadImages.js");
 var ImageHandler={};
 
 ImageHandler.drawSelectUI = function(event){
 	
 	alert('work started');	
-	ImageHandler.pickTab();
-	var mainWindow = window.openDialog("chrome://imagehandler/content/AvailableImages.xul", 'Available-Images');
- 	alert('on progress');
- 	
+	
+	//var currentTabTitle = (gBrowser.selectedBrowser).contentDocument.title;
+	//alert(currentTabTitle);
+	
+	var currentTab=ImageHandler.pickTab();
+	var ImageList=ImageHandler.pickImages(currentTab);
+	var params = {
+        "imageList": ImageList,
+        "title": "Select Images You Prefer"
+       // "listeners": listeners,
+       // "browser": gBrowser.selectedBrowser,
+       // "popupNotifications": PopupNotifications
+    };
+    //var mainWindow = window.openDialog("chrome://imagepicker/content/pick.xul", "PickImage.mainWindow", "chrome,centerscreen,resizable, dialog=no, modal=no, dependent=no,status=yes", params);
+    
+	var mainWindow = window.openDialog("chrome://imagehandler/content/AvailableImages.xul", 'Available-Images-In-tab',"chrome,centerscreen,resizable, dialog=no, modal=no, dependent=no,status=yes", params);
+		mainWindow.focus();
+	 	alert('on progress');
+	 	return true;
  }
  
- ImageHandler.pickTab= function(){
  
- 	var currentTab = gBrowser.selectedTab;;
- 	//var tabs = [currentTab];
-	var currentTabTitle = (gBrowser.selectedBrowser).contentDocument.title;
-	alert(currentTabTitle);
-	ImageHandler.pickImages(currentTab,currentTabTitle);
-}
-
+ /*
+  * Pick the browser object and tab objects
+  * 
+  */
+ ImageHandler.pickTab= function(){
+  	return gBrowser.selectedTab;;
+ }
 ImageHandler.getCurrentBrowser= function(){
 	return gBrowser.selectedBrowser;
 }
 
-ImageHandler.pickImages=function(tab,title){
+
+
+/*
+ * Functions to retreive and process images
+ * and to extract information
+ */
+ImageHandler.pickImages=function(tab){
 	var browser = gBrowser.getBrowserForTab(tab);
 	//alert('got tab');
 	var contentWindow = browser.contentWindow;
@@ -45,11 +65,11 @@ ImageHandler.pickImages=function(tab,title){
                 }
             }
         }
-        
+        return currentImageList;
           //currentImageList should be sorted and duplicates should be eliminated
 }
 
-ImageHandler.getDocumentList = function(frame){
+ImageHandler.getDocumentList = function(frame){	//take all the documents of all web content objects
     var documentList = new Array();
     documentList.push(frame.document);
     var framesList = frame.frames;

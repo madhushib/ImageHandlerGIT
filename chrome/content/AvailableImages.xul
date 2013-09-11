@@ -1,13 +1,28 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://imagehandler/skin/ip.css" type="text/css"?>
+<?xml-stylesheet href="chrome://imagehandler/skin/ih.css" type="text/css"?>
 
 
+<window id="root-windows" title="Select Images" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+								width="600" height="600">
+		
+	<script type="application/x-javascript" src="chrome://imagehandler/content/ihOverlay.js" />
+	<script type="application/x-javascript" src="chrome://imagehandler/content/loadImages.js" />
+	
+	
+	
+	 <popupset>
+        <menupopup id="context-menu" onpopupshowing="ImagePickerChrome.Controller.handleOpenContextMenu();">
+       </menupopup>
+    </popupset>
+	
+     <vbox id="imageContainer"
+        style="overflow: auto; background-color: #FFFFFF; margin:5px; border-style: groove; border-width: 1px; border-color: #b9ae9d"
+        persist="height" height="300" align="center" flex="1"
+        context="context-menu" >
+     	
+     	
 
-<prefwindow id='Avalable-Images' title="Select Images"
-     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	
-	
-	
-	
-</prefwindow>
+    </vbox>
+    
+</window>
