@@ -1,3 +1,13 @@
+/*
+ * Madhushib : 100056C CS3202
+ * 01/09/2013
+ * 
+ * Functions to retrive images in multipme tabs ant to load images in all of them
+ * 
+ */
+
+//when event triggers take the tab container and put them in to array of tabs
+//get all the documents and the retrive images in all of them
 ImageHandler.pickAllTabs = function(event){
 
     event.stopPropagation();
@@ -15,10 +25,10 @@ ImageHandler.pickAllTabs = function(event){
     ImageHandler.pickImagesFromAllTabs(tabs, currentTabTitle);
 };
 
-ImageHandler.pickImagesFromAllTabs = function(tabs, title){
 
+//load images from each tab and push in to currentImageList
+ImageHandler.pickImagesFromAllTabs = function(tabs, title){
     // init cache session can be used to increase efficiency of image loading
-   
 
     // Get images from all given tabs
     var imageInfoList = new Array();
@@ -39,8 +49,8 @@ ImageHandler.pickImagesFromAllTabs = function(tabs, title){
                     currentImageList.push(image);
                 }
             }
-            ImageHandler.Logger.info("document = " + currentDocument.title + ", images = " + currentImageList.length);
+            ImageHandler.alert("document = " + currentDocument.title + ", images = " + currentImageList.length);
 
-            imageInfoList = imageInfoList.concat(ImageHandler.convertAndTidyImage(currentImageList));
+            //imageInfoList = imageInfoList.concat(ImageHandler.SortAndTidyImage(currentImageList));
         }// end for each document
     });

@@ -1,11 +1,27 @@
-//Components.utils.import("resource://ImageHandler/loadImages.js");
-var ImageHandler={};
+/*
+ * Madhushib : 100056C CS3202
+ * 22/08/2013
+ * 
+ * This file contains the javascript functions of ihOverlay.xul 
+ * It is the defoult browser overlay for the extention which contains the buttons, shortcuts and menu bars.
+ */
 
+
+var ImageHandler={};		//The class ImageHandler contains all main functionalities and contains in several files
+
+
+
+/*
+ * ImageHandler.drawSelectUI
+ * This method is called when
+ * 	-toolbar button pressed
+ * 	-select to run Image Handler from menu or drop down list appear on right click
+ */
 ImageHandler.drawSelectUI = function(event){
 	
 	alert('work started');	
 	
-	//var currentTabTitle = (gBrowser.selectedBrowser).contentDocument.title;
+	//var currentTabTitle = (gBrowser.selectedBrowser).contentDocument.title;	//need when handling multiple tabs
 	//alert(currentTabTitle);
 	
 	var currentTab=ImageHandler.pickTab();
@@ -17,8 +33,8 @@ ImageHandler.drawSelectUI = function(event){
        // "browser": gBrowser.selectedBrowser,
        // "popupNotifications": PopupNotifications
     };
-    //var mainWindow = window.openDialog("chrome://imagepicker/content/pick.xul", "PickImage.mainWindow", "chrome,centerscreen,resizable, dialog=no, modal=no, dependent=no,status=yes", params);
-    
+   
+    //Call to open the "ImageSelector" user interface
 	var mainWindow = window.openDialog("chrome://imagehandler/content/AvailableImages.xul", 'Available-Images-In-tab',"chrome,centerscreen,resizable, dialog=no, modal=no, dependent=no,status=yes", params);
 		mainWindow.focus();
 	 	alert('on progress');
@@ -42,6 +58,7 @@ ImageHandler.getCurrentBrowser= function(){
 /*
  * Functions to retreive and process images
  * and to extract information
+ * Get the browser tab, Its content document list, and select only images. then put image documents in to imageList
  */
 ImageHandler.pickImages=function(tab){
 	var browser = gBrowser.getBrowserForTab(tab);
@@ -69,6 +86,10 @@ ImageHandler.pickImages=function(tab){
           //currentImageList should be sorted and duplicates should be eliminated
 }
 
+/*
+ * Retrive all the documents in a browser content frame
+ */
+
 ImageHandler.getDocumentList = function(frame){	//take all the documents of all web content objects
     var documentList = new Array();
     documentList.push(frame.document);
@@ -82,7 +103,10 @@ ImageHandler.getDocumentList = function(frame){	//take all the documents of all 
 };
 
 
-
+/*
+ * **************To-DO***********
+ * And a window to set user preferneces and options of the add-on
+ */
  
  
 

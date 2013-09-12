@@ -1,8 +1,17 @@
-magePickerChrome.convertAndTidyImage = function(htmlImageList){
+/*
+ * Madhushib : 100056C CS3202
+ * 05/09/2013
+ * 
+ * The web contents contain multiple types of images, banners error mesage icons etc.
+ * But user is intrest in the images appear as the main contents of the web pages;
+ * This file contains methods to filter the misseleneous images and to sort them in an order
+ */
+
+ImageHandler.sortAndTidyImage = function(htmlImageList){
 
     // Filter image by url
     var tidiedHtmlImageList = ImageHandler.filterDuplicateImage(htmlImageList);
-    ImageHandler.Logger.info("imageList.length  = " + htmlImageList.length + ", tidiedHtmlImageList.length  = " +
+    ImageHandler.alert("imageList.length  = " + htmlImageList.length + ", tidiedHtmlImageList.length  = " +
     tidiedHtmlImageList.length);
 
     // Convert to ImageHandler.ImageInfo

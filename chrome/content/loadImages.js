@@ -10,7 +10,7 @@ ImageHandler.load = function() {
         
         //
         var imageList=window.argument[0].imageList;
-        ImageHandler.selectAllImages(imageList);
+        ImageHandler.showAllImages(imageList);
                 
 
         // add event
@@ -20,7 +20,7 @@ ImageHandler.load = function() {
     }
     
 
-ImageHandler.selectAllImages=function(){
+ImageHandler.showAllImages=function(){
 	//filter images by size to avoid loading icons etc.
 	
 	var selectedMap = new ImagePicker.HashMap();
@@ -31,8 +31,7 @@ ImageHandler.selectAllImages=function(){
         }
         //updateStatuBar
         alert("select all images ");
-        
-            }
+  }
     
 ImageHandler.selectImage= function(imageId){
        

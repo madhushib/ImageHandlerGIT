@@ -1,4 +1,9 @@
-** **************** ImageGrid Object Class ******************** */
+/*
+ * Madhushib : 100056C CS3202
+ * 30/08/2013
+ * 
+
+/*** **************** ImageGrid Object Class ******************** */
 Components.utils.import("resource://ImageHandler/common.js");
 Components.utils.import("resource://ImageHandler/model.js");
 Components.utils.import("resource://ImageHandler/xulUtils.js");
