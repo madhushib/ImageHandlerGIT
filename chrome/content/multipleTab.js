@@ -39,7 +39,7 @@ ImageHandler.pickImagesFromAllTabs = function(tabs, title){
                     currentImageList.push(image);
                 }
             }
-            ImagePicker.Logger.info("document = " + currentDocument.title + ", images = " + currentImageList.length);
+            ImageHandler.Logger.info("document = " + currentDocument.title + ", images = " + currentImageList.length);
 
             imageInfoList = imageInfoList.concat(ImageHandler.convertAndTidyImage(currentImageList));
         }// end for each document

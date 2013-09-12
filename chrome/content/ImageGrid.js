@@ -1,12 +1,12 @@
 ** **************** ImageGrid Object Class ******************** */
-Components.utils.import("resource://imagepicker/common.js");
-Components.utils.import("resource://imagepicker/model.js");
-Components.utils.import("resource://imagepicker/xulUtils.js");
+Components.utils.import("resource://ImageHandler/common.js");
+Components.utils.import("resource://ImageHandler/model.js");
+Components.utils.import("resource://ImageHandler/xulUtils.js");
 
 /**
  * Provides the view for images
  *
- * @namespace ImagePicker
+ * @namespace ImageHandler
  * @class ImageHandler.ImageGrid
  * @constructor
  * @param {String}
@@ -76,7 +76,7 @@ ImageHandler.ImageGrid.prototype = {
         // calculate row count
         var rowCount = Math.ceil(imageList.length / columnCount);
 
-        ImagePicker.Logger.info("Creating Image Grid: " + this + ", columnWidth = " + columnWidth + ", columnCount = "
+        ImageHandler.Logger.info("Creating Image Grid: " + this + ", columnWidth = " + columnWidth + ", columnCount = "
                 + columnCount + ", rowCount = " + rowCount);
 
         // create grid
@@ -130,10 +130,10 @@ ImageHandler.ImageGrid.prototype = {
          if (imgInfo) {
             cellBox.setAttribute("id", imgInfo.id+"-CellBox");
             cellBox.addEventListener("mouseover", function(){
-                ImagePicker.XulUtils.addClass(this,"image-cell-highlight");
+                ImageHandler.XulUtils.addClass(this,"image-cell-highlight");
             }, false);
             cellBox.addEventListener("mouseout", function(){
-                ImagePicker.XulUtils.removeClass(this,"image-cell-highlight");
+                ImageHandler.XulUtils.removeClass(this,"image-cell-highlight");
             }, false);
             cellBox.addEventListener("click", function(event){
                 if (event.button == 0) { //Left mouse button click
@@ -227,7 +227,7 @@ ImageHandler.ImageGrid.prototype = {
 
         var adBox = document.getElementById(imageInfo.id + "-AdBox");
 
-        ImagePicker.Logger.debug("updateImageInfo to " + adBox + " for " + imageInfo);
+        ImageHandler.Logger.debug("updateImageInfo to " + adBox + " for " + imageInfo);
 
         if (adBox != null) {
             // clean old additional info content
@@ -262,7 +262,7 @@ ImageHandler.ImageGrid.prototype = {
             } else {
                 info = info + 0 + "k ";
             }
-            ImagePicker.Logger.debug("AdditionalInfo1 " + info + " for " + imageInfo);
+            ImageHandler.Logger.debug("AdditionalInfo1 " + info + " for " + imageInfo);
             additionalInfos.push(info);
         }
 
@@ -280,7 +280,7 @@ ImageHandler.ImageGrid.prototype = {
                     info = info + imageInfo.fileExt;
                 }
             }
-            ImagePicker.Logger.debug("AdditionalInfo2 " + info + " for " + imageInfo);
+            ImageHandler.Logger.debug("AdditionalInfo2 " + info + " for " + imageInfo);
             additionalInfos.push(info);
         }
         return additionalInfos;
