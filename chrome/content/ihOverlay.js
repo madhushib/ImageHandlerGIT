@@ -39,7 +39,7 @@ ImageHandler.drawSelectUI = function(event){
 		mainWindow.focus();
 	 	alert('on progress');
 	 	return true;
- }
+ };
  
  
  /*
@@ -47,11 +47,11 @@ ImageHandler.drawSelectUI = function(event){
   * 
   */
  ImageHandler.pickTab= function(){
-  	return gBrowser.selectedTab;;
- }
+  	return gBrowser.selectedTab;
+ };
 ImageHandler.getCurrentBrowser= function(){
 	return gBrowser.selectedBrowser;
-}
+};
 
 
 
@@ -84,7 +84,7 @@ ImageHandler.pickImages=function(tab){
         }
         return currentImageList;
           //currentImageList should be sorted and duplicates should be eliminated
-}
+};
 
 /*
  * Retrive all the documents in a browser content frame

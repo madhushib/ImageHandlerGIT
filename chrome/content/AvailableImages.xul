@@ -20,11 +20,9 @@
      <vbox id="imageContainer"
         style="overflow: auto; background-color: #FFFFFF; margin:5px; border-style: groove; border-width: 1px; border-color: #b9ae9d"
         persist="height" height="300" align="center" flex="1"
-        context="context-menu" >
-     	
-     	
-
+        context="context-menu" > 
     </vbox>
     
+    <button label="LoadImages" oncommand="ImageHandler.load();"/>
     
 </window>
